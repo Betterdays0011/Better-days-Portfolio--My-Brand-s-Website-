@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Academic Planner | Abdulrasheed Abraham Sadiq</title>
+  <meta name="description" content="A simple academic planner: add tasks, mark them as completed and delete them. Tasks are saved in your browser.">
+  <meta name="theme-color" content="#14284b">
+  <meta property="og:title" content="Academic Planner | Abdulrasheed Abraham Sadiq">
+  <meta property="og:description" content="A simple academic planner: add tasks, mark them as completed and delete them. Tasks are saved in your browser.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Literata:opsz,wght@7..72,400..700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Abdulrasheed Abraham Sadiq, home">
+        <img src="images/avatar.jpg" alt="" width="46" height="46">
+        <span class="brand-text">
+          <span class="brand-name">Abdulrasheed Abraham Sadiq</span>
+          <span class="brand-tag">Student portfolio</span>
+        </span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About me</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="planner.html" aria-current="page">Academic planner</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <h1>Academic planner</h1>
+        <p>Plan assignments, exams and project tasks in one place. Your tasks are saved in this browser, so they will be here when you come back.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Planner">
+      <div class="container planner-layout">
+
+        <div class="panel">
+          <h2>Add a task</h2>
+          <form id="task-form" novalidate>
+            <div class="field">
+              <label for="task-title">Task</label>
+              <input type="text" id="task-title" name="title" maxlength="120" autocomplete="off"
+                     placeholder="For example: finish the physics worksheet" aria-describedby="task-title-error">
+              <p class="field-error" id="task-title-error"></p>
+            </div>
+            <div class="field">
+              <label for="task-category">Category</label>
+              <select id="task-category" name="category">
+                <option>Assignment</option>
+                <option>Exam preparation</option>
+                <option>Study session</option>
+                <option>Better Days Education</option>
+                <option>Teens Connect Africa</option>
+                <option>Personal</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="task-due">Due date</label>
+              <input type="date" id="task-due" name="due" aria-describedby="task-due-hint">
+              <p class="hint" id="task-due-hint">Optional.</p>
+            </div>
+            <button class="btn btn--primary" type="submit">Add task</button>
+          </form>
+        </div>
+
+        <div class="panel">
+          <h2>Your tasks</h2>
+          <div class="progress-label">
+            <span id="progress-text">No tasks yet</span>
+            <span id="progress-count">0%</span>
+          </div>
+          <div class="progress" id="progress-track" role="progressbar" aria-label="Share of tasks completed" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+
+          <div class="planner-toolbar">
+            <div class="filters" role="group" aria-label="Filter tasks">
+              <button type="button" data-filter="all" aria-pressed="true">All</button>
+              <button type="button" data-filter="active" aria-pressed="false">Open</button>
+              <button type="button" data-filter="completed" aria-pressed="false">Completed</button>
+            </div>
+            <button type="button" class="btn btn--ghost btn--small" id="clear-completed" disabled>Clear completed</button>
+          </div>
+
+          <ul class="task-list" id="task-list" aria-label="Tasks"></ul>
+          <div class="empty-state" id="empty-state" hidden>
+            <strong></strong>
+            <span></span>
+          </div>
+
+          <div class="planner-foot">
+            <p>Tick the box to mark a task as completed. Open tasks are sorted by due date.</p>
+          </div>
+        </div>
+
+      </div>
+      <p class="visually-hidden" id="planner-status" role="status" aria-live="polite"></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand"><img src="images/avatar.jpg" alt="" width="44" height="44" loading="lazy"><span>Abdulrasheed Abraham Sadiq</span></p>
+          <p>Private tutor and youth advocate based in Abuja, Nigeria.</p>
+          <p>Founder of Better Days Education.</p>
+        </div>
+        <div>
+          <h2>Explore</h2>
+          <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About me</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="planner.html">Academic planner</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://forms.gle/La4rFSnzmkoXGGqj7" target="_blank" rel="noopener noreferrer">Better Days waitlist</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Get in touch</h2>
+          <ul>
+            <li><a href="tel:+2349025489850">Call 0902 548 9850</a></li>
+            <li><a href="https://wa.me/2349025489850?text=Hello%20Better%20Days%20Education%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener noreferrer">Message on WhatsApp</a></li>
+            <li><a href="mailto:betterdayseducation.impact@gmail.com">betterdayseducation.impact@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/company/better-days-education/" target="_blank" rel="noopener noreferrer">Better Days Education on LinkedIn</a></li>
+            <li><a href="https://www.linkedin.com/in/abraham-a-sadiq-4021592b7" target="_blank" rel="noopener noreferrer">Abdulrasheed on LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Abdulrasheed Abraham Sadiq.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/planner.js"></script>
+</body>
+</html>

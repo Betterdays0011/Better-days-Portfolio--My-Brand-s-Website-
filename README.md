@@ -27,5 +27,5 @@ COS 106 term project, MIVA Open University. Plain HTML, CSS and JavaScript. No b
 ## Easy edits
 - "13+ students" appears in `index.html`, `about.html` and `projects.html`. Better Days detail (services, vision, waitlist) lives at the bottom of `projects.html`.
 - Sample planner tasks: `sampleTasks()` in `js/planner.js`.
-- Replace the intro video by overwriting `media/better-days-intro.mp4` and `.webm`.
+- Replace the intro video by overwriting `media/better-days-intro2.mp4` and `.webm`.
 - The contact form has no server: after validation the visitor sends the message through WhatsApp or email.
